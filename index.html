@@ -468,12 +468,16 @@
           body: JSON.stringify(data)
         });
 
-        if (!res.ok) throw new Error('Error ' + res.status);
+        if (!res.ok) {
+          const errBody = await res.text();
+          console.error('Supabase response:', res.status, errBody);
+          throw new Error('Error ' + res.status);
+        }
 
         // Track registration event
         trackEvent('registration', 'landing');
 
-        // Send to N8n webhook
+        // Send to N8n webhook (fire and forget)
         const N8N_WEBHOOK = 'https://fbaacademypro.app.n8n.cloud/webhook-test/942e8bde-4ac5-47cb-a829-91239887d31f';
         fetch(N8N_WEBHOOK, {
           method: 'POST',
@@ -481,14 +485,25 @@
           body: JSON.stringify(data)
         }).catch(() => {});
 
-        // Redirect to thank you page
-        const params = new URLSearchParams(data);
+        // Redirect to thank you page ONLY on success
+        const params = new URLSearchParams({ nombre: data.nombre });
         window.location.href = 'gracias.html?' + params.toString();
       } catch (err) {
-        console.error('Supabase error:', err);
-        // Redirect anyway so the user doesn't get stuck
-        const params = new URLSearchParams(data);
-        window.location.href = 'gracias.html?' + params.toString();
+        console.error('Registration error:', err);
+        // Re-enable button and show error
+        btn.disabled = false;
+        btnText.textContent = originalText;
+        btn.style.boxShadow = '0 4px 20px rgba(255, 0, 0, 0.3)';
+        // Show error message
+        let errMsg = form.querySelector('.form-error');
+        if (!errMsg) {
+          errMsg = document.createElement('p');
+          errMsg.className = 'form-error';
+          errMsg.style.cssText = 'color:#ff4444;font-size:0.82rem;margin-top:8px;text-align:center;';
+          form.appendChild(errMsg);
+        }
+        errMsg.textContent = 'Hubo un error. Inténtalo de nuevo.';
+        setTimeout(() => { btn.style.boxShadow = ''; }, 3000);
       }
     });
   </script>

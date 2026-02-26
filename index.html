@@ -469,6 +469,14 @@
         // Track registration event
         trackEvent('registration', 'landing');
 
+        // Send to N8n webhook
+        const N8N_WEBHOOK = 'https://fbaacademypro.app.n8n.cloud/webhook-test/942e8bde-4ac5-47cb-a829-91239887d31f';
+        fetch(N8N_WEBHOOK, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(data)
+        }).catch(() => {});
+
         // Redirect to thank you page
         const params = new URLSearchParams(data);
         window.location.href = 'gracias.html?' + params.toString();

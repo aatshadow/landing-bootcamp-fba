@@ -310,12 +310,88 @@ body {
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
 }
 
-.vsl-video {
+/* ============ VSL CUSTOM PLAYER ============ */
+.vsl-player {
+  position: relative;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  border: 2px solid var(--border-subtle);
+  background: var(--black);
+  margin-bottom: 32px;
+  animation: fadeInUp 0.6s ease 0.2s both;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+}
+
+.vsl-player video {
   width: 100%;
-  height: auto;
   display: block;
   aspect-ratio: 16/9;
   object-fit: cover;
+}
+
+.vsl-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  background: rgba(0, 0, 0, 0.4);
+  transition: opacity 0.3s;
+  cursor: pointer;
+  z-index: 2;
+}
+
+.vsl-play-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  opacity: 0.9;
+  transition: all 0.3s;
+  padding: 0;
+}
+
+.vsl-play-btn:hover {
+  opacity: 1;
+  transform: scale(1.1);
+}
+
+.vsl-unmute-text {
+  font-size: 0.82rem;
+  color: white;
+  font-weight: 600;
+  opacity: 0.8;
+}
+
+.vsl-pause-btn {
+  position: absolute;
+  bottom: 12px;
+  left: 12px;
+  width: 36px;
+  height: 36px;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 3;
+  transition: all 0.2s;
+  padding: 0;
+}
+
+.vsl-pause-btn:hover {
+  background: rgba(0, 0, 0, 0.8);
+  transform: scale(1.1);
+}
+
+.vsl-player--thankyou {
+  margin-bottom: 28px;
+  animation: fadeInUp 0.6s ease 0.3s both;
 }
 
 /* ============ BUTTON ============ */
@@ -630,7 +706,39 @@ body {
   display: flex;
   width: 100%;
   margin-bottom: 28px;
-  animation: fadeInUp 0.6s ease 0.25s both;
+  animation: fadeInUp 0.6s ease 0.5s both;
+}
+
+.thankyou-video-title {
+  font-size: 1.15rem;
+  font-weight: 800;
+  margin-bottom: 14px;
+  animation: fadeInUp 0.6s ease 0.35s both;
+}
+
+.thankyou-wa-title {
+  font-size: 1.15rem;
+  font-weight: 800;
+  margin-bottom: 6px;
+  animation: fadeInUp 0.6s ease 0.45s both;
+}
+
+.thankyou-wa-sub {
+  font-size: 0.88rem;
+  color: var(--text-secondary);
+  margin-bottom: 16px;
+  line-height: 1.5;
+  animation: fadeInUp 0.6s ease 0.45s both;
+}
+
+.thankyou-step--highlight {
+  border-color: var(--orange);
+  background: rgba(255, 107, 0, 0.05);
+}
+
+.thankyou-step--highlight .thankyou-step-num {
+  background: var(--gradient);
+  color: var(--black);
 }
 
 /* ============ URGENCY ELEMENTS ============ */

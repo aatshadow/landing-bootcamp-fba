@@ -29,19 +29,28 @@
         <span class="gradient-text">sin intermediarios</span>
         y multiplica la rentabilidad de tu negocio
       </h1>
-      <p class="vsl-urgency">Solo 100 plazas. No se va a grabar. Si no estás, te lo pierdes para siempre.</p>
+      <p class="vsl-urgency">Plazas <strong>MUY</strong> limitadas. No se va a grabar. Si no estás, te lo pierdes para siempre.</p>
 
-      <div class="vsl-video-wrap">
+      <div class="vsl-player" id="vslPlayer">
         <video
           id="vslVideo"
-          controls
           playsinline
           preload="metadata"
+          muted
+          autoplay
           class="vsl-video"
         >
           <source src="assets/video/vsl.mp4" type="video/mp4">
-          Tu navegador no soporta vídeo HTML5.
         </video>
+        <div class="vsl-overlay" id="vslOverlay">
+          <button class="vsl-play-btn" id="vslPlayBtn">
+            <svg width="48" height="48" viewBox="0 0 48 48" fill="none"><circle cx="24" cy="24" r="23" stroke="white" stroke-width="2" opacity="0.8"/><path d="M19 14L35 24L19 34V14Z" fill="white"/></svg>
+          </button>
+          <span class="vsl-unmute-text">Pulsa para activar el sonido</span>
+        </div>
+        <button class="vsl-pause-btn" id="vslPauseBtn" style="display:none;">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="white"><rect x="4" y="3" width="4" height="14" rx="1"/><rect x="12" y="3" width="4" height="14" rx="1"/></svg>
+        </button>
       </div>
 
       <!-- Registration form -->
@@ -115,7 +124,7 @@
         <span class="marquee-item marquee-item--dot"></span>
         <span class="marquee-item">NEGOCIACIÓN DIRECTA</span>
         <span class="marquee-item marquee-item--dot"></span>
-        <span class="marquee-item">SOLO 100 PLAZAS</span>
+        <span class="marquee-item">PLAZAS MUY LIMITADAS</span>
         <span class="marquee-item marquee-item--dot"></span>
         <span class="marquee-item">DIRECTO NO GRABADO</span>
         <span class="marquee-item marquee-item--dot"></span>
@@ -132,7 +141,7 @@
         <span class="marquee-item marquee-item--dot"></span>
         <span class="marquee-item">NEGOCIACIÓN DIRECTA</span>
         <span class="marquee-item marquee-item--dot"></span>
-        <span class="marquee-item">SOLO 100 PLAZAS</span>
+        <span class="marquee-item">PLAZAS MUY LIMITADAS</span>
         <span class="marquee-item marquee-item--dot"></span>
         <span class="marquee-item">DIRECTO NO GRABADO</span>
         <span class="marquee-item marquee-item--dot"></span>
@@ -233,7 +242,7 @@
       <h2 class="section-title">¿Quién es <span class="gradient-text">Joaquín</span>?</h2>
       <p class="joaquin-bio">
         10 años viviendo en China. Habla chino con fluidez y consigue precios que ningún extranjero puede conseguir.
-        Ha acompañado a influencers como <strong>Nilo Heda</strong>, <strong>Ceci Army</strong> y <strong>Hamza Zaydi</strong>
+        Ha acompañado a influencers como <strong>Nil Ojeda</strong>, <strong>Ceci Army</strong> y <strong>Hamza Zaydi</strong>
         a conocer la China real. Tiene acceso directo a fábricas que facturan más de 700 millones de dólares al año,
         un centro logístico propio y una red de contactos que conecta a emprendedores con todo lo que necesitan.
         Cuando compras por Alibaba, hay 5, 6, 7 intermediarios de por medio. Joaquín te lleva directo a la fuente.
@@ -269,7 +278,7 @@
   <!-- CTA BREAK -->
   <section class="cta-break">
     <div class="container cta-break-content">
-      <div class="urgency-badge">SOLO 100 PLAZAS</div>
+      <div class="urgency-badge">PLAZAS MUY LIMITADAS</div>
       <h2 class="cta-break-title">Esto no es para cualquiera</h2>
       <p class="cta-break-sub">Solo queremos emprendedores comprometidos que vengan a aprender y a cambiar su vida. Si estás aquí, ya sabes que esta es tu oportunidad.</p>
       <a href="#registro" class="btn btn-primary btn-pulse">Reservar mi plaza gratis &rarr;</a>
@@ -362,6 +371,42 @@
 
   <script src="script.js"></script>
   <script>
+    // VSL Player - no seeking, no progress bar, autoplay muted
+    (function() {
+      const video = document.getElementById('vslVideo');
+      const overlay = document.getElementById('vslOverlay');
+      const pauseBtn = document.getElementById('vslPauseBtn');
+      if (!video || !overlay) return;
+
+      // Try autoplay muted
+      video.play().catch(() => {});
+
+      // Click overlay: unmute + play
+      overlay.addEventListener('click', function() {
+        video.muted = false;
+        video.play();
+        overlay.style.display = 'none';
+        pauseBtn.style.display = 'flex';
+      });
+
+      // Pause button toggle
+      pauseBtn.addEventListener('click', function() {
+        if (video.paused) {
+          video.play();
+          pauseBtn.innerHTML = '<svg width="20" height="20" viewBox="0 0 20 20" fill="white"><rect x="4" y="3" width="4" height="14" rx="1"/><rect x="12" y="3" width="4" height="14" rx="1"/></svg>';
+        } else {
+          video.pause();
+          pauseBtn.innerHTML = '<svg width="20" height="20" viewBox="0 0 20 20" fill="white"><path d="M5 3L17 10L5 17V3Z"/></svg>';
+        }
+      });
+
+      // When video ends, show overlay again
+      video.addEventListener('ended', function() {
+        overlay.style.display = 'flex';
+        pauseBtn.style.display = 'none';
+      });
+    })();
+
     const SUPABASE_URL = 'https://tdhdrfcbajgkmrdgjrdh.supabase.co';
     const SUPABASE_KEY = 'sb_publishable_gT61UjOEkYjQ7_sseIjv6A_9ktHk7Aj';
 

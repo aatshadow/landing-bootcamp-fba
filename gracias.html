@@ -35,63 +35,75 @@
         </div>
       </div>
 
-      <!-- Message -->
+      <!-- Title -->
       <h1 class="thankyou-title" id="thankyouGreeting">
         Ya estás <span class="gradient-text">dentro</span>
       </h1>
 
       <p class="thankyou-subtitle">
-        Tu plaza para el directo del <strong>domingo 1 de marzo a las 16:00h</strong> está reservada.
-        Ahora únete al grupo de WhatsApp donde compartiremos contenido exclusivo antes del directo.
+        Tu plaza está reservada. Ahora sigue estos pasos para no perderte nada.
       </p>
-
-      <!-- WhatsApp CTA - Main action -->
-      <a href="https://chat.whatsapp.com/GY6G002uscHA1LNvuvrCXa?mode=gi_t" class="btn btn-whatsapp btn-whatsapp--big btn-pulse thankyou-wa-btn" id="waBtn">
-        <span class="wa-icon-lg">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-        </span>
-        Unirme al grupo de WhatsApp
-      </a>
-
-      <!-- Video message -->
-      <div class="thankyou-video-wrap">
-        <video
-          controls
-          playsinline
-          preload="metadata"
-          class="thankyou-video"
-        >
-          <source src="assets/video/thankyou.mp4" type="video/mp4">
-          Tu navegador no soporta vídeo HTML5.
-        </video>
-      </div>
 
       <!-- Steps -->
       <div class="thankyou-steps">
-        <div class="thankyou-step">
+        <div class="thankyou-step thankyou-step--highlight">
           <div class="thankyou-step-num">1</div>
           <div class="thankyou-step-text">
-            <strong>Únete al grupo de WhatsApp</strong>
-            <span>Pulsa el botón de arriba. Ahí compartiremos contenido exclusivo antes del directo.</span>
+            <strong>Mira este vídeo de Emi</strong>
+            <span>Antes de nada, dale al play. Emi te explica qué va a pasar y por qué no puedes faltar.</span>
           </div>
         </div>
         <div class="thankyou-step">
           <div class="thankyou-step-num">2</div>
           <div class="thankyou-step-text">
-            <strong>Activa las notificaciones</strong>
-            <span>Para no perderte ningún mensaje. Vamos a ir soltando valor antes del domingo.</span>
+            <strong>Entra a la comunidad de WhatsApp</strong>
+            <span>Únete al grupo exclusivo donde compartiremos contenido y valor antes del directo.</span>
           </div>
         </div>
         <div class="thankyou-step">
           <div class="thankyou-step-num">3</div>
           <div class="thankyou-step-text">
-            <strong>Domingo 1 marzo &middot; 16:00h</strong>
-            <span>Hagas lo que hagas, para lo. No se va a grabar. Si no estás, te lo pierdes. Es así de simple.</span>
+            <strong>Domingo 1 marzo &middot; 16:00h &middot; Estate ahí</strong>
+            <span>No se va a grabar. Hagas lo que hagas, para lo. Si no estás, te lo pierdes.</span>
           </div>
         </div>
       </div>
 
-      <!-- Live session banner -->
+      <!-- Video de Emi -->
+      <h2 class="thankyou-video-title">Un mensaje de Emi para ti</h2>
+      <div class="vsl-player vsl-player--thankyou" id="tyPlayer">
+        <video
+          id="tyVideo"
+          playsinline
+          preload="metadata"
+          muted
+          autoplay
+          class="thankyou-video"
+        >
+          <source src="assets/video/thankyou.mp4" type="video/mp4">
+        </video>
+        <div class="vsl-overlay" id="tyOverlay">
+          <button class="vsl-play-btn">
+            <svg width="48" height="48" viewBox="0 0 48 48" fill="none"><circle cx="24" cy="24" r="23" stroke="white" stroke-width="2" opacity="0.8"/><path d="M19 14L35 24L19 34V14Z" fill="white"/></svg>
+          </button>
+          <span class="vsl-unmute-text">Pulsa para activar el sonido</span>
+        </div>
+        <button class="vsl-pause-btn" id="tyPauseBtn" style="display:none;">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="white"><rect x="4" y="3" width="4" height="14" rx="1"/><rect x="12" y="3" width="4" height="14" rx="1"/></svg>
+        </button>
+      </div>
+
+      <!-- WhatsApp CTA -->
+      <h2 class="thankyou-wa-title">Entra a la comunidad</h2>
+      <p class="thankyou-wa-sub">Únete al grupo de WhatsApp donde compartiremos valor, contenido exclusivo y toda la info del directo.</p>
+      <a href="https://chat.whatsapp.com/GY6G002uscHA1LNvuvrCXa?mode=gi_t" target="_blank" class="btn btn-whatsapp btn-whatsapp--big btn-pulse thankyou-wa-btn">
+        <span class="wa-icon-lg">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        </span>
+        Unirme a la comunidad de WhatsApp
+      </a>
+
+      <!-- Sorteo banner -->
       <div class="thankyou-banner">
         <div class="thankyou-banner-icon">&#x1F3AF;</div>
         <div class="thankyou-banner-text">
@@ -115,11 +127,41 @@
       const params = new URLSearchParams(window.location.search);
       const nombre = params.get('nombre');
       if (nombre) {
-        const el = document.getElementById('thankyouGreeting');
-        if (el) {
-          el.innerHTML = nombre + ', ya estás <span class="gradient-text">dentro</span>';
-        }
+        document.getElementById('thankyouGreeting').innerHTML =
+          nombre + ', ya estás <span class="gradient-text">dentro</span>';
       }
+    })();
+
+    // VSL Player for thank you video
+    (function() {
+      const video = document.getElementById('tyVideo');
+      const overlay = document.getElementById('tyOverlay');
+      const pauseBtn = document.getElementById('tyPauseBtn');
+      if (!video || !overlay) return;
+
+      video.play().catch(() => {});
+
+      overlay.addEventListener('click', function() {
+        video.muted = false;
+        video.play();
+        overlay.style.display = 'none';
+        pauseBtn.style.display = 'flex';
+      });
+
+      pauseBtn.addEventListener('click', function() {
+        if (video.paused) {
+          video.play();
+          pauseBtn.innerHTML = '<svg width="20" height="20" viewBox="0 0 20 20" fill="white"><rect x="4" y="3" width="4" height="14" rx="1"/><rect x="12" y="3" width="4" height="14" rx="1"/></svg>';
+        } else {
+          video.pause();
+          pauseBtn.innerHTML = '<svg width="20" height="20" viewBox="0 0 20 20" fill="white"><path d="M5 3L17 10L5 17V3Z"/></svg>';
+        }
+      });
+
+      video.addEventListener('ended', function() {
+        overlay.style.display = 'flex';
+        pauseBtn.style.display = 'none';
+      });
     })();
   </script>
 </body>

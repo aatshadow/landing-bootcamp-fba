@@ -2,8 +2,8 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <title>China Seller Elite Bootcamp | FBA Pro Academy</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Directo Gratuito China | FBA Pro Academy</title>
   <link rel="stylesheet" href="styles.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -11,49 +11,356 @@
 </head>
 <body>
 
-  <div class="capture-page">
-    <div class="capture-glow"></div>
-    <div class="capture-glow capture-glow--bottom"></div>
-
-    <div class="capture-container">
-      <!-- Logo -->
-      <img src="assets/img/logo.jpeg" alt="FBA Pro Academy" class="capture-logo">
-
-      <!-- Badge -->
-      <div class="capture-badge">WEBINAR GRATUITO EN DIRECTO</div>
-
-      <!-- Headline -->
-      <h1 class="capture-title">
-        Descubre cómo comprimir
-        <span class="gradient-text">5 años de prueba-error</span>
-        en Amazon y China en solo 6 días
-      </h1>
-
-      <p class="capture-subtitle">
-        Regístrate gratis y accede al grupo de WhatsApp del lanzamiento
-      </p>
-
-      <!-- Form -->
-      <form class="capture-form" id="leadForm">
-        <div class="capture-field">
-          <input type="text" name="nombre" placeholder="Tu nombre" required autocomplete="given-name">
-        </div>
-        <div class="capture-field">
-          <input type="email" name="correo" placeholder="Tu correo electrónico" required autocomplete="email">
-        </div>
-        <div class="capture-field">
-          <input type="tel" name="telefono" placeholder="Tu número de teléfono (con prefijo)" required autocomplete="tel">
-        </div>
-        <button type="submit" class="capture-btn">
-          <span class="capture-btn-text">Quiero acceder al webinar</span>
-          <span class="capture-btn-arrow">&rarr;</span>
-        </button>
-      </form>
-
-      <p class="capture-privacy">100% gratis. Sin spam. Tus datos están seguros.</p>
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <div class="container nav-content">
+      <img src="assets/img/logo.jpeg" alt="FBA Pro Academy" class="nav-logo">
+      <a href="#registro" class="nav-cta">Reserva tu plaza</a>
     </div>
-  </div>
+  </nav>
 
+  <!-- HERO: VSL VIDEO -->
+  <section class="vsl-hero">
+    <div class="vsl-glow"></div>
+    <div class="container vsl-container">
+      <div class="vsl-badge">DIRECTO GRATUITO &middot; DOMINGO 1 MARZO &middot; 16:00H</div>
+      <h1 class="vsl-title">
+        Aprende a comprar en China
+        <span class="gradient-text">sin intermediarios</span>
+        y multiplica la rentabilidad de tu negocio
+      </h1>
+      <p class="vsl-urgency">Solo 100 plazas. No se va a grabar. Si no estás, te lo pierdes para siempre.</p>
+
+      <div class="vsl-video-wrap">
+        <video
+          id="vslVideo"
+          controls
+          playsinline
+          preload="metadata"
+          class="vsl-video"
+        >
+          <source src="assets/video/vsl.mp4" type="video/mp4">
+          Tu navegador no soporta vídeo HTML5.
+        </video>
+      </div>
+
+      <!-- Registration form -->
+      <div class="hero-form-wrap" id="registro">
+        <h3 class="hero-form-title">Reserva tu plaza gratis</h3>
+        <p class="hero-form-sub">Regístrate y accede al grupo de WhatsApp del lanzamiento</p>
+        <form class="capture-form" id="leadForm">
+          <div class="capture-field">
+            <input type="text" name="nombre" placeholder="Tu nombre" required autocomplete="given-name">
+          </div>
+          <div class="capture-field">
+            <input type="email" name="correo" placeholder="Tu correo electrónico" required autocomplete="email">
+          </div>
+          <div class="capture-field">
+            <input type="tel" name="telefono" placeholder="Tu teléfono (con prefijo)" required autocomplete="tel">
+          </div>
+          <button type="submit" class="capture-btn btn-pulse">
+            <span class="capture-btn-text">Quiero mi plaza en el directo</span>
+            <span class="capture-btn-arrow">&rarr;</span>
+          </button>
+        </form>
+        <p class="capture-privacy">100% gratis &middot; Sin spam &middot; Tus datos están seguros</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- MARQUEE 1 -->
+  <section class="marquee-section">
+    <div class="marquee-row">
+      <div class="marquee-track">
+        <span class="marquee-item">SIN INTERMEDIARIOS</span>
+        <span class="marquee-item marquee-item--dot"></span>
+        <span class="marquee-item">PRECIOS DE FÁBRICA</span>
+        <span class="marquee-item marquee-item--dot"></span>
+        <span class="marquee-item">10+ AÑOS EN CHINA</span>
+        <span class="marquee-item marquee-item--dot"></span>
+        <span class="marquee-item">HABLA CHINO NATIVO</span>
+        <span class="marquee-item marquee-item--dot"></span>
+        <span class="marquee-item">FÁBRICAS +700M$/AÑO</span>
+        <span class="marquee-item marquee-item--dot"></span>
+        <span class="marquee-item">PRODUCTOS VIRALES YIWU</span>
+        <span class="marquee-item marquee-item--dot"></span>
+        <span class="marquee-item">CENTRO LOGÍSTICO GRATIS</span>
+        <span class="marquee-item marquee-item--dot"></span>
+        <span class="marquee-item">PROVEEDORES VERIFICADOS</span>
+        <span class="marquee-item marquee-item--dot"></span>
+        <!-- Duplicate for loop -->
+        <span class="marquee-item">SIN INTERMEDIARIOS</span>
+        <span class="marquee-item marquee-item--dot"></span>
+        <span class="marquee-item">PRECIOS DE FÁBRICA</span>
+        <span class="marquee-item marquee-item--dot"></span>
+        <span class="marquee-item">10+ AÑOS EN CHINA</span>
+        <span class="marquee-item marquee-item--dot"></span>
+        <span class="marquee-item">HABLA CHINO NATIVO</span>
+        <span class="marquee-item marquee-item--dot"></span>
+        <span class="marquee-item">FÁBRICAS +700M$/AÑO</span>
+        <span class="marquee-item marquee-item--dot"></span>
+        <span class="marquee-item">PRODUCTOS VIRALES YIWU</span>
+        <span class="marquee-item marquee-item--dot"></span>
+        <span class="marquee-item">CENTRO LOGÍSTICO GRATIS</span>
+        <span class="marquee-item marquee-item--dot"></span>
+        <span class="marquee-item">PROVEEDORES VERIFICADOS</span>
+        <span class="marquee-item marquee-item--dot"></span>
+      </div>
+    </div>
+    <div class="marquee-row marquee-row--reverse">
+      <div class="marquee-track">
+        <span class="marquee-item">AMAZON FBA</span>
+        <span class="marquee-item marquee-item--dot"></span>
+        <span class="marquee-item">E-COMMERCE</span>
+        <span class="marquee-item marquee-item--dot"></span>
+        <span class="marquee-item">NEGOCIACIÓN DIRECTA</span>
+        <span class="marquee-item marquee-item--dot"></span>
+        <span class="marquee-item">SOLO 100 PLAZAS</span>
+        <span class="marquee-item marquee-item--dot"></span>
+        <span class="marquee-item">DIRECTO NO GRABADO</span>
+        <span class="marquee-item marquee-item--dot"></span>
+        <span class="marquee-item">REGALO: VIAJE A CHINA</span>
+        <span class="marquee-item marquee-item--dot"></span>
+        <span class="marquee-item">EXPERIENCIA REAL</span>
+        <span class="marquee-item marquee-item--dot"></span>
+        <span class="marquee-item">RESULTADOS REALES</span>
+        <span class="marquee-item marquee-item--dot"></span>
+        <!-- Duplicate for loop -->
+        <span class="marquee-item">AMAZON FBA</span>
+        <span class="marquee-item marquee-item--dot"></span>
+        <span class="marquee-item">E-COMMERCE</span>
+        <span class="marquee-item marquee-item--dot"></span>
+        <span class="marquee-item">NEGOCIACIÓN DIRECTA</span>
+        <span class="marquee-item marquee-item--dot"></span>
+        <span class="marquee-item">SOLO 100 PLAZAS</span>
+        <span class="marquee-item marquee-item--dot"></span>
+        <span class="marquee-item">DIRECTO NO GRABADO</span>
+        <span class="marquee-item marquee-item--dot"></span>
+        <span class="marquee-item">REGALO: VIAJE A CHINA</span>
+        <span class="marquee-item marquee-item--dot"></span>
+        <span class="marquee-item">EXPERIENCIA REAL</span>
+        <span class="marquee-item marquee-item--dot"></span>
+        <span class="marquee-item">RESULTADOS REALES</span>
+        <span class="marquee-item marquee-item--dot"></span>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIOS (right after marquee) -->
+  <section class="testimonials-section">
+    <div class="container">
+      <h2 class="section-title">Resultados <span class="gradient-text">reales</span></h2>
+    </div>
+    <div class="testimonials-rows">
+      <div class="testimonial-row testimonial-row-left">
+        <div class="testimonial-row-track">
+          <div class="testimonial-img"><img src="assets/img/testimonios/1.jpg" alt="Testimonio" loading="lazy"></div>
+          <div class="testimonial-img"><img src="assets/img/testimonios/2.jpg" alt="Testimonio" loading="lazy"></div>
+          <div class="testimonial-img"><img src="assets/img/testimonios/3.jpg" alt="Testimonio" loading="lazy"></div>
+          <div class="testimonial-img"><img src="assets/img/testimonios/4.jpg" alt="Testimonio" loading="lazy"></div>
+          <div class="testimonial-img"><img src="assets/img/testimonios/5.jpg" alt="Testimonio" loading="lazy"></div>
+          <div class="testimonial-img"><img src="assets/img/testimonios/6.jpg" alt="Testimonio" loading="lazy"></div>
+          <div class="testimonial-img"><img src="assets/img/testimonios/7.jpg" alt="Testimonio" loading="lazy"></div>
+          <div class="testimonial-img"><img src="assets/img/testimonios/8.jpg" alt="Testimonio" loading="lazy"></div>
+          <div class="testimonial-img"><img src="assets/img/testimonios/9.jpg" alt="Testimonio" loading="lazy"></div>
+          <div class="testimonial-img"><img src="assets/img/testimonios/10.jpg" alt="Testimonio" loading="lazy"></div>
+          <div class="testimonial-img"><img src="assets/img/testimonios/11.jpg" alt="Testimonio" loading="lazy"></div>
+          <div class="testimonial-img"><img src="assets/img/testimonios/12.jpg" alt="Testimonio" loading="lazy"></div>
+          <div class="testimonial-img"><img src="assets/img/testimonios/13.jpg" alt="Testimonio" loading="lazy"></div>
+          <div class="testimonial-img"><img src="assets/img/testimonios/14.jpg" alt="Testimonio" loading="lazy"></div>
+          <div class="testimonial-img"><img src="assets/img/testimonios/15.jpg" alt="Testimonio" loading="lazy"></div>
+          <div class="testimonial-img"><img src="assets/img/testimonios/16.jpg" alt="Testimonio" loading="lazy"></div>
+          <!-- Duplicados para loop infinito -->
+          <div class="testimonial-img"><img src="assets/img/testimonios/1.jpg" alt="Testimonio" loading="lazy"></div>
+          <div class="testimonial-img"><img src="assets/img/testimonios/2.jpg" alt="Testimonio" loading="lazy"></div>
+          <div class="testimonial-img"><img src="assets/img/testimonios/3.jpg" alt="Testimonio" loading="lazy"></div>
+          <div class="testimonial-img"><img src="assets/img/testimonios/4.jpg" alt="Testimonio" loading="lazy"></div>
+          <div class="testimonial-img"><img src="assets/img/testimonios/5.jpg" alt="Testimonio" loading="lazy"></div>
+          <div class="testimonial-img"><img src="assets/img/testimonios/6.jpg" alt="Testimonio" loading="lazy"></div>
+          <div class="testimonial-img"><img src="assets/img/testimonios/7.jpg" alt="Testimonio" loading="lazy"></div>
+          <div class="testimonial-img"><img src="assets/img/testimonios/8.jpg" alt="Testimonio" loading="lazy"></div>
+          <div class="testimonial-img"><img src="assets/img/testimonios/9.jpg" alt="Testimonio" loading="lazy"></div>
+          <div class="testimonial-img"><img src="assets/img/testimonios/10.jpg" alt="Testimonio" loading="lazy"></div>
+          <div class="testimonial-img"><img src="assets/img/testimonios/11.jpg" alt="Testimonio" loading="lazy"></div>
+          <div class="testimonial-img"><img src="assets/img/testimonios/12.jpg" alt="Testimonio" loading="lazy"></div>
+          <div class="testimonial-img"><img src="assets/img/testimonios/13.jpg" alt="Testimonio" loading="lazy"></div>
+          <div class="testimonial-img"><img src="assets/img/testimonios/14.jpg" alt="Testimonio" loading="lazy"></div>
+          <div class="testimonial-img"><img src="assets/img/testimonios/15.jpg" alt="Testimonio" loading="lazy"></div>
+          <div class="testimonial-img"><img src="assets/img/testimonios/16.jpg" alt="Testimonio" loading="lazy"></div>
+        </div>
+      </div>
+      <div class="testimonial-row testimonial-row-right">
+        <div class="testimonial-row-track">
+          <div class="testimonial-img"><img src="assets/img/testimonios/17.jpg" alt="Testimonio" loading="lazy"></div>
+          <div class="testimonial-img"><img src="assets/img/testimonios/18.jpg" alt="Testimonio" loading="lazy"></div>
+          <div class="testimonial-img"><img src="assets/img/testimonios/19.jpg" alt="Testimonio" loading="lazy"></div>
+          <div class="testimonial-img"><img src="assets/img/testimonios/20.jpg" alt="Testimonio" loading="lazy"></div>
+          <div class="testimonial-img"><img src="assets/img/testimonios/21.jpg" alt="Testimonio" loading="lazy"></div>
+          <div class="testimonial-img"><img src="assets/img/testimonios/22.jpg" alt="Testimonio" loading="lazy"></div>
+          <div class="testimonial-img"><img src="assets/img/testimonios/23.jpg" alt="Testimonio" loading="lazy"></div>
+          <div class="testimonial-img"><img src="assets/img/testimonios/24.jpg" alt="Testimonio" loading="lazy"></div>
+          <div class="testimonial-img"><img src="assets/img/testimonios/25.jpg" alt="Testimonio" loading="lazy"></div>
+          <div class="testimonial-img"><img src="assets/img/testimonios/26.jpg" alt="Testimonio" loading="lazy"></div>
+          <div class="testimonial-img"><img src="assets/img/testimonios/27.jpg" alt="Testimonio" loading="lazy"></div>
+          <div class="testimonial-img"><img src="assets/img/testimonios/28.jpg" alt="Testimonio" loading="lazy"></div>
+          <div class="testimonial-img"><img src="assets/img/testimonios/29.jpg" alt="Testimonio" loading="lazy"></div>
+          <div class="testimonial-img"><img src="assets/img/testimonios/30.jpg" alt="Testimonio" loading="lazy"></div>
+          <div class="testimonial-img"><img src="assets/img/testimonios/31.jpg" alt="Testimonio" loading="lazy"></div>
+          <!-- Duplicados para loop infinito -->
+          <div class="testimonial-img"><img src="assets/img/testimonios/17.jpg" alt="Testimonio" loading="lazy"></div>
+          <div class="testimonial-img"><img src="assets/img/testimonios/18.jpg" alt="Testimonio" loading="lazy"></div>
+          <div class="testimonial-img"><img src="assets/img/testimonios/19.jpg" alt="Testimonio" loading="lazy"></div>
+          <div class="testimonial-img"><img src="assets/img/testimonios/20.jpg" alt="Testimonio" loading="lazy"></div>
+          <div class="testimonial-img"><img src="assets/img/testimonios/21.jpg" alt="Testimonio" loading="lazy"></div>
+          <div class="testimonial-img"><img src="assets/img/testimonios/22.jpg" alt="Testimonio" loading="lazy"></div>
+          <div class="testimonial-img"><img src="assets/img/testimonios/23.jpg" alt="Testimonio" loading="lazy"></div>
+          <div class="testimonial-img"><img src="assets/img/testimonios/24.jpg" alt="Testimonio" loading="lazy"></div>
+          <div class="testimonial-img"><img src="assets/img/testimonios/25.jpg" alt="Testimonio" loading="lazy"></div>
+          <div class="testimonial-img"><img src="assets/img/testimonios/26.jpg" alt="Testimonio" loading="lazy"></div>
+          <div class="testimonial-img"><img src="assets/img/testimonios/27.jpg" alt="Testimonio" loading="lazy"></div>
+          <div class="testimonial-img"><img src="assets/img/testimonios/28.jpg" alt="Testimonio" loading="lazy"></div>
+          <div class="testimonial-img"><img src="assets/img/testimonios/29.jpg" alt="Testimonio" loading="lazy"></div>
+          <div class="testimonial-img"><img src="assets/img/testimonios/30.jpg" alt="Testimonio" loading="lazy"></div>
+          <div class="testimonial-img"><img src="assets/img/testimonios/31.jpg" alt="Testimonio" loading="lazy"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- JOAQUIN - subtle intro -->
+  <section class="joaquin-section">
+    <div class="container">
+      <h2 class="section-title">¿Quién es <span class="gradient-text">Joaquín</span>?</h2>
+      <p class="joaquin-bio">
+        10 años viviendo en China. Habla chino con fluidez y consigue precios que ningún extranjero puede conseguir.
+        Ha acompañado a influencers como <strong>Nilo Heda</strong>, <strong>Ceci Army</strong> y <strong>Hamza Zaydi</strong>
+        a conocer la China real. Tiene acceso directo a fábricas que facturan más de 700 millones de dólares al año,
+        un centro logístico propio y una red de contactos que conecta a emprendedores con todo lo que necesitan.
+        Cuando compras por Alibaba, hay 5, 6, 7 intermediarios de por medio. Joaquín te lleva directo a la fuente.
+      </p>
+      <div class="joaquin-grid">
+        <div class="joaquin-card"><img src="assets/img/joaquin/joaquin-1.jpeg" alt="Joaquín en China" loading="lazy"></div>
+        <div class="joaquin-card"><img src="assets/img/joaquin/joaquin-2.jpeg" alt="Joaquín en China" loading="lazy"></div>
+        <div class="joaquin-card"><img src="assets/img/joaquin/joaquin-3.jpeg" alt="Joaquín en China" loading="lazy"></div>
+        <div class="joaquin-card"><img src="assets/img/joaquin/joaquin-4.jpeg" alt="Joaquín en China" loading="lazy"></div>
+        <div class="joaquin-card"><img src="assets/img/joaquin/joaquin-5.jpeg" alt="Joaquín en China" loading="lazy"></div>
+        <div class="joaquin-card"><img src="assets/img/joaquin/joaquin-6.jpeg" alt="Joaquín en China" loading="lazy"></div>
+        <div class="joaquin-card"><img src="assets/img/joaquin/joaquin-7.jpeg" alt="Joaquín en China" loading="lazy"></div>
+        <div class="joaquin-card"><img src="assets/img/joaquin/joaquin-8.jpeg" alt="Joaquín en China" loading="lazy"></div>
+        <div class="joaquin-card"><img src="assets/img/joaquin/joaquin-9.jpeg" alt="Joaquín en China" loading="lazy"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOTOS EQUIPO -->
+  <section class="team-section">
+    <div class="container">
+      <div class="team-photos-grid">
+        <div class="team-photo-card">
+          <img src="assets/img/equipo-playa.jpeg" alt="Equipo en la playa" loading="lazy">
+        </div>
+        <div class="team-photo-card">
+          <img src="assets/img/equipo-fiesta.jpeg" alt="Equipo de fiesta" loading="lazy">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA BREAK -->
+  <section class="cta-break">
+    <div class="container cta-break-content">
+      <div class="urgency-badge">SOLO 100 PLAZAS</div>
+      <h2 class="cta-break-title">Esto no es para cualquiera</h2>
+      <p class="cta-break-sub">Solo queremos emprendedores comprometidos que vengan a aprender y a cambiar su vida. Si estás aquí, ya sabes que esta es tu oportunidad.</p>
+      <a href="#registro" class="btn btn-primary btn-pulse">Reservar mi plaza gratis &rarr;</a>
+    </div>
+  </section>
+
+  <!-- ROADMAP: 3 days China trip -->
+  <section class="roadmap-section">
+    <div class="container">
+      <div class="vsl-badge">VIAJE EXCLUSIVO A CHINA</div>
+      <h2 class="section-title">3 días que te cambian <span class="gradient-text">la vida</span></h2>
+      <p class="roadmap-intro">Un programa diseñado por Joaquín. Acceso a fábricas, proveedores y la cultura china de primera mano. Vamos a estar exhaustos, pero te vas a llevar todo.</p>
+
+      <div class="roadmap-timeline">
+        <div class="roadmap-line"></div>
+
+        <div class="roadmap-card roadmap-card--left fade-in">
+          <div class="roadmap-day">Día 1</div>
+          <h3 class="roadmap-card-title">Llegada e Inmersión</h3>
+          <p class="roadmap-card-desc">Recepción en Shenzhen, briefing del viaje y networking con el grupo. Primera inmersión en la cultura china: comida local, KTV y planificación de los días que vienen.</p>
+        </div>
+
+        <div class="roadmap-card roadmap-card--right fade-in">
+          <div class="roadmap-day">Día 2</div>
+          <h3 class="roadmap-card-title">Fábricas y Negociación Directa</h3>
+          <p class="roadmap-card-desc">Visitas a fábricas de perfumes, diamantes, textil y muebles de alta calidad. Negociación directa con proveedores reales: sin intermediarios, precios de fábrica.</p>
+        </div>
+
+        <div class="roadmap-card roadmap-card--left fade-in">
+          <div class="roadmap-day">Día 3</div>
+          <h3 class="roadmap-card-title">Logística, Contactos y Cierre</h3>
+          <p class="roadmap-card-desc">Masterclass de logística internacional, acceso al centro logístico de Joaquín, lista de productos virales de Yiwu y plan de acción personalizado para tu negocio.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MARQUEE 2 -->
+  <section class="marquee-section">
+    <div class="marquee-row">
+      <div class="marquee-track">
+        <span class="marquee-item">PLAZAS AGOTÁNDOSE</span>
+        <span class="marquee-item marquee-item--dot"></span>
+        <span class="marquee-item">NO SE VA A GRABAR</span>
+        <span class="marquee-item marquee-item--dot"></span>
+        <span class="marquee-item">ACCESO EXCLUSIVO</span>
+        <span class="marquee-item marquee-item--dot"></span>
+        <span class="marquee-item">DOMINGO 1 MARZO</span>
+        <span class="marquee-item marquee-item--dot"></span>
+        <span class="marquee-item">16:00H ESPAÑA</span>
+        <span class="marquee-item marquee-item--dot"></span>
+        <span class="marquee-item">SORTEO VIAJE GRATIS</span>
+        <span class="marquee-item marquee-item--dot"></span>
+        <!-- Duplicate for loop -->
+        <span class="marquee-item">PLAZAS AGOTÁNDOSE</span>
+        <span class="marquee-item marquee-item--dot"></span>
+        <span class="marquee-item">NO SE VA A GRABAR</span>
+        <span class="marquee-item marquee-item--dot"></span>
+        <span class="marquee-item">ACCESO EXCLUSIVO</span>
+        <span class="marquee-item marquee-item--dot"></span>
+        <span class="marquee-item">DOMINGO 1 MARZO</span>
+        <span class="marquee-item marquee-item--dot"></span>
+        <span class="marquee-item">16:00H ESPAÑA</span>
+        <span class="marquee-item marquee-item--dot"></span>
+        <span class="marquee-item">SORTEO VIAJE GRATIS</span>
+        <span class="marquee-item marquee-item--dot"></span>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA FINAL -->
+  <section class="cta-final">
+    <div class="container cta-final-content">
+      <div class="cta-final-glow"></div>
+      <div class="urgency-badge urgency-badge--large">QUEDAN MUY POCAS PLAZAS</div>
+      <h2 class="cta-final-title">¿Vas a dejar que <span class="gradient-text">otros lo aprovechen</span>?</h2>
+      <p class="cta-final-sub">Vamos a sortear un viaje gratis a China entre todos los registrados. Solo por apuntarte ya participas. Pero eso sí: el directo no se graba. Si no estás el domingo, te lo pierdes.</p>
+      <a href="#registro" class="btn btn-primary btn-pulse">Quiero mi plaza gratis &rarr;</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer-content">
+      <img src="assets/img/logo.jpeg" alt="FBA Pro Academy" class="footer-logo">
+      <p class="footer-text">FBA Pro Academy &bull; Emi &amp; Joaquín &bull; 2026</p>
+      <p class="footer-legal">&copy; 2026 FBA Pro Academy. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
   <script>
     document.getElementById('leadForm').addEventListener('submit', function(e) {
       e.preventDefault();
@@ -67,9 +374,9 @@
       const leads = JSON.parse(localStorage.getItem('bootcamp_leads') || '[]');
       leads.push({ ...data, timestamp: new Date().toISOString() });
       localStorage.setItem('bootcamp_leads', JSON.stringify(leads));
-      // Redirect to webinar page with name
+      // Redirect to thank you page
       const params = new URLSearchParams(data);
-      window.location.href = 'webinar.html?' + params.toString();
+      window.location.href = 'gracias.html?' + params.toString();
     });
   </script>
 </body>

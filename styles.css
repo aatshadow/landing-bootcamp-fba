@@ -191,7 +191,7 @@ body {
 }
 
 /* ================================================
-   PAGE 2: WEBINAR (webinar.html)
+   MAIN PAGE (index.html)
    ================================================ */
 
 /* ============ NAVBAR ============ */
@@ -576,6 +576,61 @@ body {
 
 .testimonial-row:hover .testimonial-row-track {
   animation-play-state: paused;
+}
+
+/* ============ HERO FORM ============ */
+.hero-form-wrap {
+  margin-top: 40px;
+  padding: 32px 28px;
+  background: var(--dark-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  max-width: 460px;
+  margin-left: auto;
+  margin-right: auto;
+  animation: fadeInUp 0.6s ease 0.3s both;
+}
+
+.hero-form-title {
+  font-size: 1.3rem;
+  font-weight: 800;
+  margin-bottom: 4px;
+}
+
+.hero-form-sub {
+  font-size: 0.88rem;
+  color: var(--text-secondary);
+  margin-bottom: 20px;
+}
+
+.hero-form-wrap .capture-form {
+  margin-bottom: 12px;
+}
+
+.hero-form-wrap .capture-privacy {
+  text-align: center;
+}
+
+/* ============ JOAQUIN BIO ============ */
+.joaquin-bio {
+  max-width: 700px;
+  margin: -20px auto 40px;
+  text-align: center;
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  line-height: 1.7;
+}
+
+.joaquin-bio strong {
+  color: var(--text-primary);
+}
+
+/* ============ THANKYOU WHATSAPP BUTTON ============ */
+.thankyou-wa-btn {
+  display: flex;
+  width: 100%;
+  margin-bottom: 28px;
+  animation: fadeInUp 0.6s ease 0.25s both;
 }
 
 /* ============ URGENCY ELEMENTS ============ */
@@ -1079,6 +1134,10 @@ body {
   .nav-cta { padding: 8px 16px; font-size: 0.78rem; gap: 6px; }
   .nav-cta .wa-icon svg { width: 14px; height: 14px; }
 
+  /* Hero form */
+  .hero-form-wrap { padding: 24px 20px; margin-top: 28px; }
+  .hero-form-title { font-size: 1.1rem; }
+
   /* Roadmap */
   .roadmap-line { display: none; }
   .roadmap-card { width: 100%; margin-bottom: 16px; }
@@ -1088,6 +1147,9 @@ body {
 
   /* Marquee */
   .marquee-item { font-size: 0.72rem; padding: 0 12px; }
+
+  /* Joaquin bio */
+  .joaquin-bio { font-size: 0.88rem; }
 
   /* Thank you page */
   .thankyou-page { padding: 20px 16px; }

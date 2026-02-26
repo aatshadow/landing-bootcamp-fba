@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Webinar China Seller Elite | FBA Pro Academy</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <div class="container nav-content">
+      <img src="assets/img/logo.jpeg" alt="FBA Pro Academy" class="nav-logo">
+      <a href="#WHATSAPP_GROUP_URL" class="nav-cta nav-cta--whatsapp" onclick="goWhatsApp(event)">
+        <span class="wa-icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        </span>
+        Unirme al grupo
+      </a>
+    </div>
+  </nav>
+
+  <!-- HERO: VSL VIDEO -->
+  <section class="vsl-hero">
+    <div class="vsl-glow"></div>
+    <div class="container vsl-container">
+      <div class="vsl-badge">PLAZAS MUY LIMITADAS</div>
+      <h1 class="vsl-title" id="personalGreeting">
+        6 días intensivos que comprimen
+        <span class="gradient-text">5 años de prueba-error</span>
+        en Amazon y China
+      </h1>
+      <p class="vsl-urgency">Solo aceptamos un grupo reducido. Cuando se llenen las plazas, se cierran las puertas.</p>
+
+      <div class="vsl-video-wrap">
+        <video
+          id="vslVideo"
+          controls
+          playsinline
+          preload="metadata"
+          poster=""
+          class="vsl-video"
+        >
+          <source src="assets/video/vsl.mp4" type="video/mp4">
+          Tu navegador no soporta vídeo HTML5.
+        </video>
+      </div>
+
+      <!-- CTA 1: Below video -->
+      <a href="#WHATSAPP_GROUP_URL" class="btn btn-whatsapp btn-whatsapp--big btn-pulse" onclick="goWhatsApp(event)">
+        <span class="wa-icon-lg">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        </span>
+        Unirme al grupo de WhatsApp
+      </a>
+      <p class="vsl-spots">Las plazas se agotan rápido. No esperes.</p>
+    </div>
+  </section>
+
+  <!-- MARQUEE 1 -->
+  <section class="marquee-section">
+    <div class="marquee-row">
+      <div class="marquee-track">
+        <span class="marquee-item">ACCESO DIRECTO A FÁBRICAS</span>
+        <span class="marquee-item marquee-item--dot"></span>
+        <span class="marquee-item">10+ AÑOS EN CHINA</span>
+        <span class="marquee-item marquee-item--dot"></span>
+        <span class="marquee-item">GRUPO SÚPER REDUCIDO</span>
+        <span class="marquee-item marquee-item--dot"></span>
+        <span class="marquee-item">NETWORKING VIP</span>
+        <span class="marquee-item marquee-item--dot"></span>
+        <span class="marquee-item">VISITAS A PROVEEDORES</span>
+        <span class="marquee-item marquee-item--dot"></span>
+        <span class="marquee-item">NEGOCIACIÓN IN SITU</span>
+        <span class="marquee-item marquee-item--dot"></span>
+        <span class="marquee-item">MENTORÍA PERSONALIZADA</span>
+        <span class="marquee-item marquee-item--dot"></span>
+        <span class="marquee-item">ESTRATEGIAS AVANZADAS</span>
+        <span class="marquee-item marquee-item--dot"></span>
+        <!-- Duplicate for loop -->
+        <span class="marquee-item">ACCESO DIRECTO A FÁBRICAS</span>
+        <span class="marquee-item marquee-item--dot"></span>
+        <span class="marquee-item">10+ AÑOS EN CHINA</span>
+        <span class="marquee-item marquee-item--dot"></span>
+        <span class="marquee-item">GRUPO SÚPER REDUCIDO</span>
+        <span class="marquee-item marquee-item--dot"></span>
+        <span class="marquee-item">NETWORKING VIP</span>
+        <span class="marquee-item marquee-item--dot"></span>
+        <span class="marquee-item">VISITAS A PROVEEDORES</span>
+        <span class="marquee-item marquee-item--dot"></span>
+        <span class="marquee-item">NEGOCIACIÓN IN SITU</span>
+        <span class="marquee-item marquee-item--dot"></span>
+        <span class="marquee-item">MENTORÍA PERSONALIZADA</span>
+        <span class="marquee-item marquee-item--dot"></span>
+        <span class="marquee-item">ESTRATEGIAS AVANZADAS</span>
+        <span class="marquee-item marquee-item--dot"></span>
+      </div>
+    </div>
+    <div class="marquee-row marquee-row--reverse">
+      <div class="marquee-track">
+        <span class="marquee-item">SHENZHEN, CHINA</span>
+        <span class="marquee-item marquee-item--dot"></span>
+        <span class="marquee-item">6 DÍAS INTENSIVOS</span>
+        <span class="marquee-item marquee-item--dot"></span>
+        <span class="marquee-item">PLAZAS MUY LIMITADAS</span>
+        <span class="marquee-item marquee-item--dot"></span>
+        <span class="marquee-item">SELLERS DE ÉLITE</span>
+        <span class="marquee-item marquee-item--dot"></span>
+        <span class="marquee-item">INMERSIÓN TOTAL</span>
+        <span class="marquee-item marquee-item--dot"></span>
+        <span class="marquee-item">RESULTADOS REALES</span>
+        <span class="marquee-item marquee-item--dot"></span>
+        <span class="marquee-item">EXPERIENCIA ÚNICA</span>
+        <span class="marquee-item marquee-item--dot"></span>
+        <span class="marquee-item">AMAZON FBA PRO</span>
+        <span class="marquee-item marquee-item--dot"></span>
+        <!-- Duplicate for loop -->
+        <span class="marquee-item">SHENZHEN, CHINA</span>
+        <span class="marquee-item marquee-item--dot"></span>
+        <span class="marquee-item">6 DÍAS INTENSIVOS</span>
+        <span class="marquee-item marquee-item--dot"></span>
+        <span class="marquee-item">PLAZAS MUY LIMITADAS</span>
+        <span class="marquee-item marquee-item--dot"></span>
+        <span class="marquee-item">SELLERS DE ÉLITE</span>
+        <span class="marquee-item marquee-item--dot"></span>
+        <span class="marquee-item">INMERSIÓN TOTAL</span>
+        <span class="marquee-item marquee-item--dot"></span>
+        <span class="marquee-item">RESULTADOS REALES</span>
+        <span class="marquee-item marquee-item--dot"></span>
+        <span class="marquee-item">EXPERIENCIA ÚNICA</span>
+        <span class="marquee-item marquee-item--dot"></span>
+        <span class="marquee-item">AMAZON FBA PRO</span>
+        <span class="marquee-item marquee-item--dot"></span>
+      </div>
+    </div>
+  </section>
+
+  <!-- JOAQUIN PHOTOS -->
+  <section class="joaquin-section">
+    <div class="container">
+      <h2 class="section-title">Introduciendo a <span class="gradient-text">Joaquín</span></h2>
+      <div class="joaquin-grid">
+        <div class="joaquin-card"><img src="assets/img/joaquin/joaquin-1.jpeg" alt="Experiencia bootcamp" loading="lazy"></div>
+        <div class="joaquin-card"><img src="assets/img/joaquin/joaquin-2.jpeg" alt="Experiencia bootcamp" loading="lazy"></div>
+        <div class="joaquin-card"><img src="assets/img/joaquin/joaquin-3.jpeg" alt="Experiencia bootcamp" loading="lazy"></div>
+        <div class="joaquin-card"><img src="assets/img/joaquin/joaquin-4.jpeg" alt="Experiencia bootcamp" loading="lazy"></div>
+        <div class="joaquin-card"><img src="assets/img/joaquin/joaquin-5.jpeg" alt="Experiencia bootcamp" loading="lazy"></div>
+        <div class="joaquin-card"><img src="assets/img/joaquin/joaquin-6.jpeg" alt="Experiencia bootcamp" loading="lazy"></div>
+        <div class="joaquin-card"><img src="assets/img/joaquin/joaquin-7.jpeg" alt="Experiencia bootcamp" loading="lazy"></div>
+        <div class="joaquin-card"><img src="assets/img/joaquin/joaquin-8.jpeg" alt="Experiencia bootcamp" loading="lazy"></div>
+        <div class="joaquin-card"><img src="assets/img/joaquin/joaquin-9.jpeg" alt="Experiencia bootcamp" loading="lazy"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA 2: Between sections -->
+  <section class="cta-break">
+    <div class="container cta-break-content">
+      <div class="urgency-badge">QUEDAN MUY POCAS PLAZAS</div>
+      <h2 class="cta-break-title">Esto no es para todo el mundo</h2>
+      <p class="cta-break-sub">Solo aceptamos un grupo reducido de sellers comprometidos. Si estás aquí, es porque sabes que este es tu momento.</p>
+      <a href="#WHATSAPP_GROUP_URL" class="btn btn-whatsapp btn-whatsapp--big" onclick="goWhatsApp(event)">
+        <span class="wa-icon-lg">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        </span>
+        Entrar al grupo de WhatsApp
+      </a>
+    </div>
+  </section>
+
+  <!-- FOTOS EQUIPO -->
+  <section class="team-section">
+    <div class="container">
+      <div class="team-photos-grid">
+        <div class="team-photo-card">
+          <img src="assets/img/equipo-playa.jpeg" alt="Equipo del bootcamp en la playa" loading="lazy">
+        </div>
+        <div class="team-photo-card">
+          <img src="assets/img/equipo-fiesta.jpeg" alt="Equipo del bootcamp de fiesta" loading="lazy">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ROADMAP: Tu semana en Shenzhen -->
+  <section class="roadmap-section">
+    <div class="container">
+      <div class="vsl-badge">6 DÍAS QUE LO CAMBIAN TODO</div>
+      <h2 class="section-title">Tu semana en <span class="gradient-text">Shenzhen</span></h2>
+      <p class="roadmap-intro">Un programa diseñado al detalle para que exprimas cada minuto al máximo.</p>
+
+      <div class="roadmap-timeline">
+        <div class="roadmap-line"></div>
+
+        <div class="roadmap-card roadmap-card--left fade-in">
+          <div class="roadmap-day">Día 1</div>
+          <h3 class="roadmap-card-title">Llegada y Bienvenida</h3>
+          <p class="roadmap-card-desc">Recepción en Shenzhen, briefing del bootcamp y cena de networking con el grupo.</p>
+        </div>
+
+        <div class="roadmap-card roadmap-card--right fade-in">
+          <div class="roadmap-day">Día 2</div>
+          <h3 class="roadmap-card-title">Visita a Fábricas</h3>
+          <p class="roadmap-card-desc">Acceso exclusivo a fábricas top. Verás el proceso de producción de primera mano.</p>
+        </div>
+
+        <div class="roadmap-card roadmap-card--left fade-in">
+          <div class="roadmap-day">Día 3</div>
+          <h3 class="roadmap-card-title">Negociación con Proveedores</h3>
+          <p class="roadmap-card-desc">Aprende a negociar directamente con proveedores chinos y consigue los mejores precios.</p>
+        </div>
+
+        <div class="roadmap-card roadmap-card--right fade-in">
+          <div class="roadmap-day">Día 4</div>
+          <h3 class="roadmap-card-title">Control de Calidad</h3>
+          <p class="roadmap-card-desc">Técnicas avanzadas de QC, inspección de muestras y gestión de estándares.</p>
+        </div>
+
+        <div class="roadmap-card roadmap-card--left fade-in">
+          <div class="roadmap-day">Día 5</div>
+          <h3 class="roadmap-card-title">Logística y Envíos</h3>
+          <p class="roadmap-card-desc">Masterclass de logística internacional: shipping, aduanas y optimización de costes.</p>
+        </div>
+
+        <div class="roadmap-card roadmap-card--right fade-in">
+          <div class="roadmap-day">Día 6</div>
+          <h3 class="roadmap-card-title">Estrategia Final y Cierre</h3>
+          <p class="roadmap-card-desc">Plan de acción personalizado, cierre de acuerdos y despedida épica del grupo.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MARQUEE 2 -->
+  <section class="marquee-section">
+    <div class="marquee-row">
+      <div class="marquee-track">
+        <span class="marquee-item">PLAZAS AGOTÁNDOSE</span>
+        <span class="marquee-item marquee-item--dot"></span>
+        <span class="marquee-item">NO HAY SEGUNDA OPORTUNIDAD</span>
+        <span class="marquee-item marquee-item--dot"></span>
+        <span class="marquee-item">ACCESO EXCLUSIVO</span>
+        <span class="marquee-item marquee-item--dot"></span>
+        <span class="marquee-item">RESULTADOS GARANTIZADOS</span>
+        <span class="marquee-item marquee-item--dot"></span>
+        <span class="marquee-item">SHENZHEN 2026</span>
+        <span class="marquee-item marquee-item--dot"></span>
+        <span class="marquee-item">SELLERS DE ÉLITE</span>
+        <span class="marquee-item marquee-item--dot"></span>
+        <!-- Duplicate for loop -->
+        <span class="marquee-item">PLAZAS AGOTÁNDOSE</span>
+        <span class="marquee-item marquee-item--dot"></span>
+        <span class="marquee-item">NO HAY SEGUNDA OPORTUNIDAD</span>
+        <span class="marquee-item marquee-item--dot"></span>
+        <span class="marquee-item">ACCESO EXCLUSIVO</span>
+        <span class="marquee-item marquee-item--dot"></span>
+        <span class="marquee-item">RESULTADOS GARANTIZADOS</span>
+        <span class="marquee-item marquee-item--dot"></span>
+        <span class="marquee-item">SHENZHEN 2026</span>
+        <span class="marquee-item marquee-item--dot"></span>
+        <span class="marquee-item">SELLERS DE ÉLITE</span>
+        <span class="marquee-item marquee-item--dot"></span>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIOS -->
+  <section class="testimonials-section">
+    <div class="container">
+      <h2 class="section-title">Resultados <span class="gradient-text">reales</span></h2>
+    </div>
+    <div class="testimonials-rows">
+      <!-- Fila 1: izquierda (incluye Joaquín fotos al inicio) -->
+      <div class="testimonial-row testimonial-row-left">
+        <div class="testimonial-row-track">
+          <div class="testimonial-img"><img src="assets/img/testimonios/1.jpg" alt="Testimonio" loading="lazy"></div>
+          <div class="testimonial-img"><img src="assets/img/testimonios/2.jpg" alt="Testimonio" loading="lazy"></div>
+          <div class="testimonial-img"><img src="assets/img/testimonios/3.jpg" alt="Testimonio" loading="lazy"></div>
+          <div class="testimonial-img"><img src="assets/img/testimonios/4.jpg" alt="Testimonio" loading="lazy"></div>
+          <div class="testimonial-img"><img src="assets/img/testimonios/5.jpg" alt="Testimonio" loading="lazy"></div>
+          <div class="testimonial-img"><img src="assets/img/testimonios/6.jpg" alt="Testimonio" loading="lazy"></div>
+          <div class="testimonial-img"><img src="assets/img/testimonios/7.jpg" alt="Testimonio" loading="lazy"></div>
+          <div class="testimonial-img"><img src="assets/img/testimonios/8.jpg" alt="Testimonio" loading="lazy"></div>
+          <div class="testimonial-img"><img src="assets/img/testimonios/9.jpg" alt="Testimonio" loading="lazy"></div>
+          <div class="testimonial-img"><img src="assets/img/testimonios/10.jpg" alt="Testimonio" loading="lazy"></div>
+          <div class="testimonial-img"><img src="assets/img/testimonios/11.jpg" alt="Testimonio" loading="lazy"></div>
+          <div class="testimonial-img"><img src="assets/img/testimonios/12.jpg" alt="Testimonio" loading="lazy"></div>
+          <div class="testimonial-img"><img src="assets/img/testimonios/13.jpg" alt="Testimonio" loading="lazy"></div>
+          <div class="testimonial-img"><img src="assets/img/testimonios/14.jpg" alt="Testimonio" loading="lazy"></div>
+          <div class="testimonial-img"><img src="assets/img/testimonios/15.jpg" alt="Testimonio" loading="lazy"></div>
+          <div class="testimonial-img"><img src="assets/img/testimonios/16.jpg" alt="Testimonio" loading="lazy"></div>
+          <!-- Duplicados para loop infinito -->
+          <div class="testimonial-img"><img src="assets/img/testimonios/1.jpg" alt="Testimonio" loading="lazy"></div>
+          <div class="testimonial-img"><img src="assets/img/testimonios/2.jpg" alt="Testimonio" loading="lazy"></div>
+          <div class="testimonial-img"><img src="assets/img/testimonios/3.jpg" alt="Testimonio" loading="lazy"></div>
+          <div class="testimonial-img"><img src="assets/img/testimonios/4.jpg" alt="Testimonio" loading="lazy"></div>
+          <div class="testimonial-img"><img src="assets/img/testimonios/5.jpg" alt="Testimonio" loading="lazy"></div>
+          <div class="testimonial-img"><img src="assets/img/testimonios/6.jpg" alt="Testimonio" loading="lazy"></div>
+          <div class="testimonial-img"><img src="assets/img/testimonios/7.jpg" alt="Testimonio" loading="lazy"></div>
+          <div class="testimonial-img"><img src="assets/img/testimonios/8.jpg" alt="Testimonio" loading="lazy"></div>
+          <div class="testimonial-img"><img src="assets/img/testimonios/9.jpg" alt="Testimonio" loading="lazy"></div>
+          <div class="testimonial-img"><img src="assets/img/testimonios/10.jpg" alt="Testimonio" loading="lazy"></div>
+          <div class="testimonial-img"><img src="assets/img/testimonios/11.jpg" alt="Testimonio" loading="lazy"></div>
+          <div class="testimonial-img"><img src="assets/img/testimonios/12.jpg" alt="Testimonio" loading="lazy"></div>
+          <div class="testimonial-img"><img src="assets/img/testimonios/13.jpg" alt="Testimonio" loading="lazy"></div>
+          <div class="testimonial-img"><img src="assets/img/testimonios/14.jpg" alt="Testimonio" loading="lazy"></div>
+          <div class="testimonial-img"><img src="assets/img/testimonios/15.jpg" alt="Testimonio" loading="lazy"></div>
+          <div class="testimonial-img"><img src="assets/img/testimonios/16.jpg" alt="Testimonio" loading="lazy"></div>
+        </div>
+      </div>
+      <!-- Fila 2: derecha -->
+      <div class="testimonial-row testimonial-row-right">
+        <div class="testimonial-row-track">
+          <div class="testimonial-img"><img src="assets/img/testimonios/17.jpg" alt="Testimonio" loading="lazy"></div>
+          <div class="testimonial-img"><img src="assets/img/testimonios/18.jpg" alt="Testimonio" loading="lazy"></div>
+          <div class="testimonial-img"><img src="assets/img/testimonios/19.jpg" alt="Testimonio" loading="lazy"></div>
+          <div class="testimonial-img"><img src="assets/img/testimonios/20.jpg" alt="Testimonio" loading="lazy"></div>
+          <div class="testimonial-img"><img src="assets/img/testimonios/21.jpg" alt="Testimonio" loading="lazy"></div>
+          <div class="testimonial-img"><img src="assets/img/testimonios/22.jpg" alt="Testimonio" loading="lazy"></div>
+          <div class="testimonial-img"><img src="assets/img/testimonios/23.jpg" alt="Testimonio" loading="lazy"></div>
+          <div class="testimonial-img"><img src="assets/img/testimonios/24.jpg" alt="Testimonio" loading="lazy"></div>
+          <div class="testimonial-img"><img src="assets/img/testimonios/25.jpg" alt="Testimonio" loading="lazy"></div>
+          <div class="testimonial-img"><img src="assets/img/testimonios/26.jpg" alt="Testimonio" loading="lazy"></div>
+          <div class="testimonial-img"><img src="assets/img/testimonios/27.jpg" alt="Testimonio" loading="lazy"></div>
+          <div class="testimonial-img"><img src="assets/img/testimonios/28.jpg" alt="Testimonio" loading="lazy"></div>
+          <div class="testimonial-img"><img src="assets/img/testimonios/29.jpg" alt="Testimonio" loading="lazy"></div>
+          <div class="testimonial-img"><img src="assets/img/testimonios/30.jpg" alt="Testimonio" loading="lazy"></div>
+          <div class="testimonial-img"><img src="assets/img/testimonios/31.jpg" alt="Testimonio" loading="lazy"></div>
+          <!-- Duplicados para loop infinito -->
+          <div class="testimonial-img"><img src="assets/img/testimonios/17.jpg" alt="Testimonio" loading="lazy"></div>
+          <div class="testimonial-img"><img src="assets/img/testimonios/18.jpg" alt="Testimonio" loading="lazy"></div>
+          <div class="testimonial-img"><img src="assets/img/testimonios/19.jpg" alt="Testimonio" loading="lazy"></div>
+          <div class="testimonial-img"><img src="assets/img/testimonios/20.jpg" alt="Testimonio" loading="lazy"></div>
+          <div class="testimonial-img"><img src="assets/img/testimonios/21.jpg" alt="Testimonio" loading="lazy"></div>
+          <div class="testimonial-img"><img src="assets/img/testimonios/22.jpg" alt="Testimonio" loading="lazy"></div>
+          <div class="testimonial-img"><img src="assets/img/testimonios/23.jpg" alt="Testimonio" loading="lazy"></div>
+          <div class="testimonial-img"><img src="assets/img/testimonios/24.jpg" alt="Testimonio" loading="lazy"></div>
+          <div class="testimonial-img"><img src="assets/img/testimonios/25.jpg" alt="Testimonio" loading="lazy"></div>
+          <div class="testimonial-img"><img src="assets/img/testimonios/26.jpg" alt="Testimonio" loading="lazy"></div>
+          <div class="testimonial-img"><img src="assets/img/testimonios/27.jpg" alt="Testimonio" loading="lazy"></div>
+          <div class="testimonial-img"><img src="assets/img/testimonios/28.jpg" alt="Testimonio" loading="lazy"></div>
+          <div class="testimonial-img"><img src="assets/img/testimonios/29.jpg" alt="Testimonio" loading="lazy"></div>
+          <div class="testimonial-img"><img src="assets/img/testimonios/30.jpg" alt="Testimonio" loading="lazy"></div>
+          <div class="testimonial-img"><img src="assets/img/testimonios/31.jpg" alt="Testimonio" loading="lazy"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA 3: Final -->
+  <section class="cta-final">
+    <div class="container cta-final-content">
+      <div class="cta-final-glow"></div>
+      <div class="urgency-badge urgency-badge--large">ÚLTIMAS PLAZAS DISPONIBLES</div>
+      <h2 class="cta-final-title">O entras ahora, o <span class="gradient-text">te quedas fuera</span></h2>
+      <p class="cta-final-sub">Las plazas para Shenzhen son extremadamente limitadas y se están llenando. No habrá lista de espera. Cuando se cierren, se cierran.</p>
+      <a href="#WHATSAPP_GROUP_URL" class="btn btn-whatsapp btn-whatsapp--big" onclick="goWhatsApp(event)">
+        <span class="wa-icon-lg">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        </span>
+        Unirme al grupo de WhatsApp
+      </a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer-content">
+      <img src="assets/img/logo.jpeg" alt="FBA Pro Academy" class="footer-logo">
+      <p class="footer-text">China Seller Elite Bootcamp &bull; Shenzhen Edition &bull; 2026</p>
+      <p class="footer-legal">&copy; 2026 FBA Pro Academy. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+  <script>
+    // Personalize greeting if name is in URL
+    (function() {
+      const params = new URLSearchParams(window.location.search);
+      const nombre = params.get('nombre');
+      if (nombre) {
+        const el = document.getElementById('personalGreeting');
+        if (el) {
+          el.innerHTML = nombre + ', descubre cómo comprimir <span class="gradient-text">5 años de prueba-error</span> en Amazon y China';
+        }
+      }
+    })();
+
+    // WhatsApp CTA: redirect to thank you page
+    // IMPORTANT: Replace #WHATSAPP_GROUP_URL with your actual WhatsApp group link
+    const WHATSAPP_URL = '#WHATSAPP_GROUP_URL'; // <-- REPLACE THIS
+    function goWhatsApp(e) {
+      e.preventDefault();
+      // Open WhatsApp in new tab
+      if (WHATSAPP_URL !== '#WHATSAPP_GROUP_URL') {
+        window.open(WHATSAPP_URL, '_blank');
+      }
+      // Redirect to thank you page
+      window.location.href = 'gracias.html';
+    }
+  </script>
+</body>
+</html>

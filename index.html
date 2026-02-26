@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>China Seller Elite Bootcamp | FBA Pro Academy</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <div class="capture-page">
+    <div class="capture-glow"></div>
+    <div class="capture-glow capture-glow--bottom"></div>
+
+    <div class="capture-container">
+      <!-- Logo -->
+      <img src="assets/img/logo.jpeg" alt="FBA Pro Academy" class="capture-logo">
+
+      <!-- Badge -->
+      <div class="capture-badge">WEBINAR GRATUITO EN DIRECTO</div>
+
+      <!-- Headline -->
+      <h1 class="capture-title">
+        Descubre cómo comprimir
+        <span class="gradient-text">5 años de prueba-error</span>
+        en Amazon y China en solo 6 días
+      </h1>
+
+      <p class="capture-subtitle">
+        Regístrate gratis y accede al grupo de WhatsApp del lanzamiento
+      </p>
+
+      <!-- Form -->
+      <form class="capture-form" id="leadForm">
+        <div class="capture-field">
+          <input type="text" name="nombre" placeholder="Tu nombre" required autocomplete="given-name">
+        </div>
+        <div class="capture-field">
+          <input type="email" name="correo" placeholder="Tu correo electrónico" required autocomplete="email">
+        </div>
+        <div class="capture-field">
+          <input type="tel" name="telefono" placeholder="Tu número de teléfono (con prefijo)" required autocomplete="tel">
+        </div>
+        <button type="submit" class="capture-btn">
+          <span class="capture-btn-text">Quiero acceder al webinar</span>
+          <span class="capture-btn-arrow">&rarr;</span>
+        </button>
+      </form>
+
+      <p class="capture-privacy">100% gratis. Sin spam. Tus datos están seguros.</p>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById('leadForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const form = e.target;
+      const data = {
+        nombre: form.nombre.value,
+        correo: form.correo.value,
+        telefono: form.telefono.value
+      };
+      // Store lead locally
+      const leads = JSON.parse(localStorage.getItem('bootcamp_leads') || '[]');
+      leads.push({ ...data, timestamp: new Date().toISOString() });
+      localStorage.setItem('bootcamp_leads', JSON.stringify(leads));
+      // Redirect to webinar page with name
+      const params = new URLSearchParams(data);
+      window.location.href = 'webinar.html?' + params.toString();
+    });
+  </script>
+</body>
+</html>

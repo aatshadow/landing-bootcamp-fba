@@ -376,10 +376,17 @@
       btn.disabled = true;
       btnText.textContent = 'Enviando...';
 
+      // Read UTMs from URL
+      const urlParams = new URLSearchParams(window.location.search);
       const data = {
         nombre: form.nombre.value.trim(),
         correo: form.correo.value.trim(),
-        telefono: form.telefono.value.trim()
+        telefono: form.telefono.value.trim(),
+        utm_source: urlParams.get('utm_source') || null,
+        utm_medium: urlParams.get('utm_medium') || null,
+        utm_campaign: urlParams.get('utm_campaign') || null,
+        utm_term: urlParams.get('utm_term') || null,
+        utm_content: urlParams.get('utm_content') || null
       };
 
       try {

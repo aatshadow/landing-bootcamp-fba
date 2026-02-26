@@ -67,6 +67,9 @@
           <div class="capture-field">
             <input type="tel" name="telefono" placeholder="Tu teléfono (con prefijo)" required autocomplete="tel">
           </div>
+          <div class="capture-field">
+            <input type="text" name="instagram" placeholder="Tu @ de Instagram" autocomplete="off">
+          </div>
           <button type="submit" class="capture-btn btn-pulse">
             <span class="capture-btn-text">Quiero mi plaza en el directo</span>
             <span class="capture-btn-arrow">&rarr;</span>
@@ -444,6 +447,7 @@
         nombre: form.nombre.value.trim(),
         correo: form.correo.value.trim(),
         telefono: form.telefono.value.trim(),
+        instagram: form.instagram.value.trim() || null,
         utm_source: urlParams.get('utm_source') || null,
         utm_medium: urlParams.get('utm_medium') || null,
         utm_campaign: urlParams.get('utm_campaign') || null,

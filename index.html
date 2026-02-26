@@ -362,21 +362,50 @@
 
   <script src="script.js"></script>
   <script>
-    document.getElementById('leadForm').addEventListener('submit', function(e) {
+    const SUPABASE_URL = 'https://tdhdrfcbajgkmrdgjrdh.supabase.co';
+    const SUPABASE_KEY = 'sb_publishable_gT61UjOEkYjQ7_sseIjv6A_9ktHk7Aj';
+
+    document.getElementById('leadForm').addEventListener('submit', async function(e) {
       e.preventDefault();
       const form = e.target;
+      const btn = form.querySelector('button[type="submit"]');
+      const btnText = btn.querySelector('.capture-btn-text');
+      const originalText = btnText.textContent;
+
+      // Disable button while sending
+      btn.disabled = true;
+      btnText.textContent = 'Enviando...';
+
       const data = {
-        nombre: form.nombre.value,
-        correo: form.correo.value,
-        telefono: form.telefono.value
+        nombre: form.nombre.value.trim(),
+        correo: form.correo.value.trim(),
+        telefono: form.telefono.value.trim()
       };
-      // Store lead locally
-      const leads = JSON.parse(localStorage.getItem('bootcamp_leads') || '[]');
-      leads.push({ ...data, timestamp: new Date().toISOString() });
-      localStorage.setItem('bootcamp_leads', JSON.stringify(leads));
-      // Redirect to thank you page
-      const params = new URLSearchParams(data);
-      window.location.href = 'gracias.html?' + params.toString();
+
+      try {
+        // Send to Supabase
+        const res = await fetch(SUPABASE_URL + '/rest/v1/leads', {
+          method: 'POST',
+          headers: {
+            'apikey': SUPABASE_KEY,
+            'Authorization': 'Bearer ' + SUPABASE_KEY,
+            'Content-Type': 'application/json',
+            'Prefer': 'return=minimal'
+          },
+          body: JSON.stringify(data)
+        });
+
+        if (!res.ok) throw new Error('Error ' + res.status);
+
+        // Redirect to thank you page
+        const params = new URLSearchParams(data);
+        window.location.href = 'gracias.html?' + params.toString();
+      } catch (err) {
+        console.error('Supabase error:', err);
+        // Redirect anyway so the user doesn't get stuck
+        const params = new URLSearchParams(data);
+        window.location.href = 'gracias.html?' + params.toString();
+      }
     });
   </script>
 </body>

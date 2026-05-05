@@ -319,6 +319,67 @@
     </div>
   </section>
 
+  <!-- CALCULADORA DE PRESUPUESTO -->
+  <section class="budget-section" id="presupuesto">
+    <div class="container">
+      <h2 class="section-title">¿Cuánto necesito invertir?</h2>
+      <p class="budget-subtitle">
+        Calcula un rango aproximado de inversión inicial para arrancar tu negocio FBA con producto traído directo de fábrica en China.
+        El rango se adjunta a tu registro y nuestro equipo lo usa para preparar tu plan personalizado.
+      </p>
+
+      <div class="budget-card">
+        <div class="budget-grid">
+          <div class="budget-field">
+            <label for="bg-categoria">Categoría de producto</label>
+            <select id="bg-categoria" class="budget-input">
+              <option value="perfumes">Perfumes / cosmética</option>
+              <option value="textil">Textil / accesorios</option>
+              <option value="muebles">Muebles / hogar</option>
+              <option value="electronica">Electrónica / gadgets</option>
+              <option value="otro" selected>Otro / aún no decidido</option>
+            </select>
+          </div>
+
+          <div class="budget-field">
+            <label for="bg-volumen">
+              Unidades a vender al mes (estimado)
+              <span class="budget-value" id="bg-volumen-val">300</span>
+            </label>
+            <input id="bg-volumen" class="budget-range" type="range" min="50" max="2000" step="50" value="300" />
+            <div class="budget-range-hints">
+              <span>50</span><span>2000</span>
+            </div>
+          </div>
+
+          <div class="budget-field">
+            <label for="bg-precio">
+              Precio de venta por unidad (€)
+              <span class="budget-value" id="bg-precio-val">25 €</span>
+            </label>
+            <input id="bg-precio" class="budget-range" type="range" min="5" max="200" step="1" value="25" />
+            <div class="budget-range-hints">
+              <span>5 €</span><span>200 €</span>
+            </div>
+          </div>
+        </div>
+
+        <button type="button" class="budget-btn" id="bg-calcular">
+          <span>Calcular mi presupuesto</span>
+        </button>
+
+        <div class="budget-result" id="bg-result" hidden>
+          <div class="budget-result-label">Inversión inicial estimada</div>
+          <div class="budget-result-range" id="bg-range">— a —</div>
+          <p class="budget-result-note">
+            Incluye stock inicial (3 meses), flete marítimo China→España, aranceles típicos y fees de Amazon FBA.
+            Es una estimación; tu plan real lo afinamos durante el directo.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- MARQUEE 2 -->
   <section class="marquee-section">
     <div class="marquee-row">
@@ -410,10 +471,90 @@
       });
     })();
 
+    // ─── Calculadora de presupuesto ───────────────────────────────────────
+    // Inversión inicial estimada para arrancar un negocio FBA con producto
+    // de fábrica China. Constantes ajustables a partir de aprendizaje real
+    // de Joaquín — están aquí arriba para que el equipo de IC pueda tunearlas
+    // sin tocar el cálculo.
+    //
+    // Modelo:
+    //   stock_inicial = volumen_mensual * RUNWAY_MESES
+    //   coste_unitario_FOB = precio_venta * (categoria.markupBaseInverso)
+    //                        ej perfumes 0.18 → coste FOB ≈ 18% del PVP
+    //   inversion_total = stock_inicial * coste_unitario_FOB
+    //                     * (1 + FREIGHT_PCT + TARIFF_PCT + FBA_PREP_PCT)
+    //   range = inversion_total * [LOW_FACTOR, HIGH_FACTOR]
+    //
+    // El resultado se publica en window.__presupuestoEstimado como string
+    // "X,XXX a Y,YYY" (formato es-ES, sin "€"). El submit handler de abajo
+    // lo lee y lo manda al CRM en custom_fields.presupuesto_estimado.
+    const BUDGET_CONFIG = {
+      RUNWAY_MESES: 3,        // stock inicial = 3 meses de demanda
+      FREIGHT_PCT:  0.18,     // flete marítimo China→España (% sobre FOB)
+      TARIFF_PCT:   0.12,     // aranceles típicos UE
+      FBA_PREP_PCT: 0.20,     // fees Amazon + prep + storage
+      LOW_FACTOR:   0.80,     // -20% del centro estimado
+      HIGH_FACTOR:  1.25,     // +25% del centro estimado
+      // Coste FOB unitario aprox como % del PVP final, por categoría
+      // (margen tras todo: ~3–4x sobre FOB es lo razonable en FBA China).
+      CATEGORIA: {
+        perfumes:    { markupBaseInverso: 0.18 },
+        textil:      { markupBaseInverso: 0.22 },
+        muebles:     { markupBaseInverso: 0.30 },
+        electronica: { markupBaseInverso: 0.35 },
+        otro:        { markupBaseInverso: 0.25 },
+      },
+    };
+
+    function formatEurInt(n) {
+      return Math.round(n).toLocaleString('es-ES');
+    }
+
+    function computeBudget(categoriaKey, volumenMensual, precioVenta) {
+      const cat = BUDGET_CONFIG.CATEGORIA[categoriaKey] || BUDGET_CONFIG.CATEGORIA.otro;
+      const stockInicial = volumenMensual * BUDGET_CONFIG.RUNWAY_MESES;
+      const costeFOB = precioVenta * cat.markupBaseInverso;
+      const inversionTotal = stockInicial * costeFOB *
+        (1 + BUDGET_CONFIG.FREIGHT_PCT + BUDGET_CONFIG.TARIFF_PCT + BUDGET_CONFIG.FBA_PREP_PCT);
+      const low  = inversionTotal * BUDGET_CONFIG.LOW_FACTOR;
+      const high = inversionTotal * BUDGET_CONFIG.HIGH_FACTOR;
+      return { low, high, asString: `${formatEurInt(low)} a ${formatEurInt(high)}` };
+    }
+
+    (function initBudgetCalc() {
+      const catEl = document.getElementById('bg-categoria');
+      const volEl = document.getElementById('bg-volumen');
+      const prEl  = document.getElementById('bg-precio');
+      const volValEl = document.getElementById('bg-volumen-val');
+      const prValEl  = document.getElementById('bg-precio-val');
+      const btnEl    = document.getElementById('bg-calcular');
+      const resultEl = document.getElementById('bg-result');
+      const rangeEl  = document.getElementById('bg-range');
+      if (!catEl || !volEl || !prEl || !btnEl || !rangeEl) return;
+
+      function syncSliderLabels() {
+        volValEl.textContent = volEl.value;
+        prValEl.textContent  = prEl.value + ' €';
+      }
+      volEl.addEventListener('input', syncSliderLabels);
+      prEl.addEventListener('input',  syncSliderLabels);
+
+      btnEl.addEventListener('click', () => {
+        const out = computeBudget(catEl.value, parseInt(volEl.value, 10), parseInt(prEl.value, 10));
+        rangeEl.textContent = `${formatEurInt(out.low)} € a ${formatEurInt(out.high)} €`;
+        resultEl.hidden = false;
+        // Lo que el submit handler del form leerá y enviará al CRM:
+        window.__presupuestoEstimado = out.asString;
+        // Smooth-scroll al form para cerrar el lead.
+        const form = document.getElementById('leadForm');
+        if (form) form.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      });
+    })();
+
     // Endpoint del CRM (Dashboard-Ops). El lead aterriza en el cliente
     // 'yc-logistics' (IC Logistics) → pipeline 'IC Logistics Web' → stage
-    // 'lead_nuevo'. La calculadora de presupuesto, cuando exista, debe
-    // rellenar `presupuesto_estimado` en el payload (string libre, ej: "3,500 a 5,500").
+    // 'lead_nuevo'. window.__presupuestoEstimado lo rellena la calculadora
+    // de arriba; si el usuario no la usa, se manda null.
     const ICL_FORM_ENDPOINT = 'https://central.blackwolfsec.io/api/forms/icl-submit';
 
     document.getElementById('leadForm').addEventListener('submit', async function(e) {

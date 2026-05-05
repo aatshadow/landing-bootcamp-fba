@@ -38,7 +38,7 @@ const STRINGS = {
       eyebrow: 'Cotización IA', title: 'Tu precio en 30 segundos',
       sub: 'Datos reales del almacén en Shenzhen. 80–90% de precisión. Sin compromiso.',
       step1: 'Paso 1 — Datos de contacto', step2: 'Paso 2 — Producto y destino', step3: 'Paso 3 — Carga y dimensiones',
-      name: 'Nombre', namePh: 'Tu nombre', whatsapp: 'WhatsApp', whatsappPh: '+34 600...', email: 'Email (opcional)', emailPh: 'email@...',
+      name: 'Nombre', namePh: 'Tu nombre', whatsapp: 'WhatsApp', whatsappPh: '34600123456 (sin +, todo junto)', email: 'Email (opcional)', emailPh: 'email@...',
       category: 'Categoría', destination: 'Destino', method: 'Método de envío',
       cartons: 'Cartones', weight: 'Peso/cartón (kg)', length: 'Largo (cm)', width: 'Ancho (cm)', height: 'Alto (cm)',
       next: 'Continuar', back: 'Atrás', calc: 'Calcular precio', estimating: 'Estimando con IA...',
@@ -143,7 +143,7 @@ const STRINGS = {
       eyebrow: 'AI Quote', title: 'Your price in 30 seconds',
       sub: 'Real data from our Shenzhen warehouse. 80–90% accuracy. No commitment.',
       step1: 'Step 1 — Contact info', step2: 'Step 2 — Product & destination', step3: 'Step 3 — Cargo & dimensions',
-      name: 'Name', namePh: 'Your name', whatsapp: 'WhatsApp', whatsappPh: '+1 555...', email: 'Email (optional)', emailPh: 'email@...',
+      name: 'Name', namePh: 'Your name', whatsapp: 'WhatsApp', whatsappPh: '15551234567 (no +, all together)', email: 'Email (optional)', emailPh: 'email@...',
       category: 'Category', destination: 'Destination', method: 'Shipping method',
       cartons: 'Cartons', weight: 'Weight/carton (kg)', length: 'Length (cm)', width: 'Width (cm)', height: 'Height (cm)',
       next: 'Continue', back: 'Back', calc: 'Calculate price', estimating: 'Estimating with AI...',
@@ -248,7 +248,7 @@ const STRINGS = {
       eyebrow: 'AI 报价', title: '30 秒获取价格',
       sub: '深圳仓库真实数据。80–90% 准确度。无需承诺。',
       step1: '步骤 1 — 联系信息', step2: '步骤 2 — 产品与目的地', step3: '步骤 3 — 货物与尺寸',
-      name: '姓名', namePh: '您的姓名', whatsapp: 'WhatsApp', whatsappPh: '+86 ...', email: '邮箱（可选）', emailPh: 'email@...',
+      name: '姓名', namePh: '您的姓名', whatsapp: 'WhatsApp', whatsappPh: '8613800138000 (无 +)', email: '邮箱（可选）', emailPh: 'email@...',
       category: '类别', destination: '目的地', method: '运输方式',
       cartons: '箱数', weight: '每箱重量（公斤）', length: '长（厘米）', width: '宽（厘米）', height: '高（厘米）',
       next: '继续', back: '返回', calc: '计算价格', estimating: 'AI 估算中...',
@@ -566,6 +566,7 @@ export default function LandingLogistics() {
   const handleContact = async () => {
     if (!result || !form.name || !form.phone) return
     setSending(true)
+    const phoneDigits = String(form.phone).replace(/\D/g, '')
     try {
       const { data: clients } = await supabase.from('clients').select('id').eq('slug', 'yc-logistics').single()
       const clientId = clients?.id || null
@@ -599,13 +600,13 @@ export default function LandingLogistics() {
             category: form.category,
           },
           result,
-          contact: { name: form.name, email: form.email, phone: form.phone },
+          contact: { name: form.name, email: form.email, phone: phoneDigits },
         }),
         supabase.from('crm_contacts').insert({
           client_id: clientId,
           pipeline_id: pipelineId,
           stage_key: stageKey,
-          name: form.name, email: form.email || null, phone: form.phone,
+          name: form.name, email: form.email || null, phone: phoneDigits,
           status: 'lead', source: 'logistics_landing',
           tags: ['logistics', `lang:${lang}`],
           notes: `Cotización: €${result.priceMin}-€${result.priceMax} | ${form.category} | ${form.destination} | ${result.method} | ${result.billable}kg`,
@@ -721,7 +722,7 @@ export default function LandingLogistics() {
                   whileHover={{ scale: 1.005 }}
                   whileTap={{ scale: 0.99 }}
                   aria-label="Play video"
-                  style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', padding: 0, border: 'none', background: 'transparent', cursor: 'pointer' }}>
+                  style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', padding: 0, border: 'none', background: 'transparent', cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                   <img
                     src={`${BASE}poster.webp`}
                     alt=""
@@ -734,7 +735,7 @@ export default function LandingLogistics() {
                     initial={{ scale: 1 }}
                     whileHover={{ scale: 1.08 }}
                     transition={{ duration: 0.3, ease: EASE }}
-                    style={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)', width: mob ? 72 : 96, height: mob ? 72 : 96, borderRadius: '50%', background: 'rgba(255,255,255,0.95)', display: 'flex', alignItems: 'center', justifyContent: 'center', boxShadow: '0 20px 60px -10px rgba(30,64,175,0.45), 0 0 0 8px rgba(255,255,255,0.18)' }}>
+                    style={{ position: 'relative', width: mob ? 72 : 96, height: mob ? 72 : 96, borderRadius: '50%', background: 'rgba(255,255,255,0.95)', display: 'flex', alignItems: 'center', justifyContent: 'center', boxShadow: '0 20px 60px -10px rgba(30,64,175,0.45), 0 0 0 8px rgba(255,255,255,0.18)' }}>
                     <Play size={mob ? 28 : 36} color={C.blue} fill={C.blue} style={{ marginLeft: 4 }} />
                   </motion.div>
                 </motion.button>

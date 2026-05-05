@@ -1,0 +1,23 @@
+*, *::before, *::after { box-sizing: border-box; }
+
+html, body, #root {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  background: #FFFFFF;
+  color: #0F172A;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html { scroll-behavior: smooth; overflow-x: hidden; }
+body { overflow-x: hidden; }
+
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: #F8FAFC; }
+::-webkit-scrollbar-thumb { background: rgba(30, 64, 175, 0.20); border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: rgba(30, 64, 175, 0.40); }
+
+button { font-family: inherit; }
+img, video { max-width: 100%; height: auto; }

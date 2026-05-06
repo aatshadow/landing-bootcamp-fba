@@ -44,6 +44,7 @@ const STRINGS = {
       next: 'Continuar', back: 'Atrás', calc: 'Calcular precio', estimating: 'Estimando con IA...',
       select: 'Seleccionar...',
       result: { label: 'Precio estimado', billable: 'Peso facturable', confLow: 'Estimación base', confMed: 'Buena precisión', confHigh: 'Alta precisión', confMod: 'Precisión moderada', similar: 'envíos similares', talk: 'Contactar con agente', opening: 'Enviando...', newQuote: 'Nueva cotización' },
+      thanks: { title: '¡Gracias!', message: 'Un agente te contactará pronto.', sub: 'Hemos recibido tu cotización. Nos pondremos en contacto contigo en breve por WhatsApp o email.', newQuote: 'Nueva cotización' },
     },
     about: {
       eyebrow: 'Quiénes somos', title1: 'Logística desde China,', title2: 'con control real.',
@@ -149,6 +150,7 @@ const STRINGS = {
       next: 'Continue', back: 'Back', calc: 'Calculate price', estimating: 'Estimating with AI...',
       select: 'Select...',
       result: { label: 'Estimated price', billable: 'Billable weight', confLow: 'Base estimate', confMed: 'Good accuracy', confHigh: 'High accuracy', confMod: 'Moderate accuracy', similar: 'similar shipments', talk: 'Contact agent', opening: 'Sending...', newQuote: 'New quote' },
+      thanks: { title: 'Thank you!', message: 'An agent will contact you soon.', sub: 'We have received your quote. We will be in touch shortly via WhatsApp or email.', newQuote: 'New quote' },
     },
     about: {
       eyebrow: 'Who we are', title1: 'Logistics from China,', title2: 'with real control.',
@@ -254,6 +256,7 @@ const STRINGS = {
       next: '继续', back: '返回', calc: '计算价格', estimating: 'AI 估算中...',
       select: '请选择...',
       result: { label: '估算价格', billable: '计费重量', confLow: '基础估算', confMed: '良好准确度', confHigh: '高准确度', confMod: '中等准确度', similar: '相似货运', talk: '联系客服', opening: '发送中...', newQuote: '新报价' },
+      thanks: { title: '谢谢！', message: '客服将很快联系您。', sub: '我们已收到您的报价。我们将通过 WhatsApp 或邮件尽快与您联系。', newQuote: '新报价' },
     },
     about: {
       eyebrow: '关于我们', title1: '来自中国的物流，', title2: '真实管控。',
@@ -548,20 +551,6 @@ export default function LandingLogistics() {
     setEstimating(false)
   }
 
-  const whatsappMsg = () => {
-    if (!result) return ''
-    const m = t.waMsg
-    const msg = `${m.hello}\n` +
-      `- ${m.product}: ${form.category}\n` +
-      `- ${form.cartons} ${m.cartons}, ${form.weight}kg\n` +
-      `- ${m.dimensions}: ${form.length}x${form.width}x${form.height} cm\n` +
-      `- ${m.destination}: ${form.destination}\n` +
-      `- ${m.method}: ${t.methodNames[result.method] || result.method}\n` +
-      `- ${m.estimate}: €${result.priceMin} - €${result.priceMax}\n` +
-      `${form.name ? `- ${m.name}: ${form.name}` : ''}\n` +
-      `${form.email ? `- ${m.email}: ${form.email}` : ''}`
-    return encodeURIComponent(msg.trim())
-  }
 
   const handleContact = async () => {
     if (!result || !form.name || !form.phone) return
@@ -624,7 +613,7 @@ export default function LandingLogistics() {
       console.error('[YC Logistics] Failed to save lead to Supabase:', err)
     }
     setSending(false)
-    window.open(`https://wa.me/?text=${whatsappMsg()}`, '_blank')
+    setStep(4)
   }
 
   const eyebrow = { display: 'block', fontSize: 10, fontWeight: 700, letterSpacing: '0.3em', color: C.blue, textTransform: 'uppercase', textAlign: 'center', marginBottom: 10 }
@@ -943,13 +932,44 @@ export default function LandingLogistics() {
                   </div>
 
                   <motion.button onClick={handleContact} disabled={sending}
-                    whileHover={{ scale: 1.02, boxShadow: '0 14px 40px -8px rgba(37,211,102,0.45)' }} whileTap={{ scale: 0.98 }}
-                    style={{ ...s.btnPrimary, background: '#25D366', marginBottom: 10, opacity: sending ? 0.6 : 1 }}>
+                    whileHover={{ scale: 1.02, boxShadow: '0 14px 40px -8px rgba(30,64,175,0.45)' }} whileTap={{ scale: 0.98 }}
+                    style={{ ...s.btnPrimary, marginBottom: 10, opacity: sending ? 0.6 : 1 }}>
                     {sending ? t.calc.result.opening : <><MessageCircle size={16} /> {t.calc.result.talk}</>}
                   </motion.button>
                   <motion.button onClick={() => { setStep(0); setResult(null) }} whileHover={{ scale: 1.01 }} whileTap={{ scale: 0.99 }} style={{ ...s.btnGhost, fontSize: 13 }}>
                     {t.calc.result.newQuote}
                   </motion.button>
+                </motion.div>
+              )}
+
+              {step === 4 && (
+                <motion.div
+                  initial={{ opacity: 0, scale: 0.96 }} animate={{ opacity: 1, scale: 1 }}
+                  transition={{ duration: 0.6, ease: EASE }}
+                  style={{ textAlign: 'center', padding: mob ? '20px 0' : '32px 0' }}>
+                  <motion.div
+                    initial={{ scale: 0, rotate: -90 }} animate={{ scale: 1, rotate: 0 }}
+                    transition={{ duration: 0.7, delay: 0.15, ease: EASE, type: 'spring', stiffness: 140 }}
+                    style={{ width: mob ? 84 : 104, height: mob ? 84 : 104, borderRadius: '50%', background: 'rgba(34,197,94,0.10)', border: '1px solid rgba(34,197,94,0.30)', display: 'inline-flex', alignItems: 'center', justifyContent: 'center', marginBottom: 24 }}>
+                    <CheckCircle2 size={mob ? 44 : 56} color={C.green} strokeWidth={1.6} />
+                  </motion.div>
+                  <h2 style={{ fontSize: mob ? 32 : 44, fontWeight: 300, letterSpacing: '-0.02em', color: C.text, margin: '0 0 12px' }}>
+                    {t.calc.thanks.title}
+                  </h2>
+                  <p style={{ fontSize: mob ? 17 : 20, color: C.text, fontWeight: 500, margin: '0 0 14px' }}>
+                    {t.calc.thanks.message}
+                  </p>
+                  <p style={{ fontSize: mob ? 14 : 15, color: C.text2, maxWidth: 480, margin: '0 auto 32px', lineHeight: 1.6 }}>
+                    {t.calc.thanks.sub}
+                  </p>
+                  <div style={{ maxWidth: 280, margin: '0 auto' }}>
+                    <motion.button
+                      onClick={() => { setStep(0); setResult(null); setForm(f => ({ ...f, name: '', phone: '', email: '' })) }}
+                      whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}
+                      style={s.btnGhost}>
+                      {t.calc.thanks.newQuote}
+                    </motion.button>
+                  </div>
                 </motion.div>
               )}
             </motion.div>

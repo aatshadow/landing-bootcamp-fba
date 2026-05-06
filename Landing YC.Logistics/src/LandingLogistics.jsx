@@ -598,7 +598,7 @@ export default function LandingLogistics() {
           name: form.name, email: form.email || null, phone: phoneDigits,
           status: 'lead', source: 'logistics_landing',
           tags: ['logistics', `lang:${lang}`],
-          notes: `Cotización: €${result.priceMin}-€${result.priceMax} | ${form.category} | ${form.destination} | ${result.method} | ${result.billable}kg`,
+          notes: `Cotización: $${result.priceMin}-$${result.priceMax} | ${form.category} | ${form.destination} | ${result.method} | ${result.billable}kg`,
           custom_fields: {
             product_description: form.category, product_category: form.category,
             shipping_method: form.method, destination_country: form.destination,
@@ -916,7 +916,7 @@ export default function LandingLogistics() {
                         initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.8, delay: 0.2, ease: EASE }}
                         style={{ fontSize: mob ? 40 : 60, fontWeight: 300, letterSpacing: '-0.03em', color: C.text, marginBottom: 6, lineHeight: 1 }}>
-                        €{result.priceMin.toLocaleString()} <span style={{ color: C.text3 }}>—</span> €{result.priceMax.toLocaleString()}
+                        ${result.priceMin.toLocaleString('en-US')} <span style={{ color: C.text3 }}>—</span> ${result.priceMax.toLocaleString('en-US')}
                       </motion.div>
                       <div style={{ color: C.text2, fontSize: 13, marginBottom: 14 }}>
                         {t.methodNames[result.method]} · {result.time} · {t.calc.result.billable} {result.billable} kg
